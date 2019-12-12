@@ -2,192 +2,91 @@
 
 
 void
-on_devis_hebergement_clicked           (GtkWidget       *objet_graphique,
-                                        gpointer         user_data);
-
-void
-on_devis_vol_clicked                   (GtkWidget       *objet_graphique,
-                                        gpointer         user_data);
-
-void
-on_devis_location_clicked              (GtkWidget       *objet_graphique,
-                                        gpointer         user_data);
-
-void
-on_retourdevol_clicked                 (GtkWidget       *objet_graphique,
-                                        gpointer         user_data);
-
-void
-on_retourhebergement_clicked           (GtkWidget       *objet_graphique,
-                                        gpointer         user_data);
-
-void
-on_retourlocation_clicked              (GtkWidget       *objet_graphique,
-                                        gpointer         user_data);
-
-
-
-void
-on_payer_clicked                       (GtkWidget       *objet_graphique,
-                                        gpointer         user_data);
-
-void
-on_retourpayer_clicked                 (GtkWidget       *objet_graphique,
-                                        gpointer         user_data);
-
-void
-on_acceuil_clicked                     (GtkWidget       *objet_graphique,
-                                        gpointer         user_data);
-
-void
-on_payer_vol_clicked                   (GtkWidget       *objet_graphique,
-                                        gpointer         user_data);
-
-void
-on_payer_hebergement_clicked           (GtkWidget       *objet_graphique,
-                                        gpointer         user_data);
-
-void
-on_supprimer_devis_hebergement_clicked (GtkWidget       *objet_graphique,
-                                        gpointer         user_data);
-
-void
-on_payer_devis_location_clicked        (GtkWidget       *objet_graphique,
-                                        gpointer         user_data);
-
-void
-on_supprimer_devis_vol_clicked         (GtkWidget       *objet_graphique,
-                                        gpointer         user_data);
-
-void
-on_enregistrer_carte_clicked           (GtkWidget       *objet_graphique,
+on_afficher_clicked                     (GtkWidget       *objet,
                                         gpointer         user_data);
 
 
 void
-on_monprofil_clicked                   (GtkWidget       *objet_graphique,
+on_ajouter_clicked                     (GtkWidget       *objet,
                                         gpointer         user_data);
 
 void
-on_reser_voiture_clicked               (GtkButton       *button,
+on_supprimer_clicked                   (GtkWidget       *objet,
                                         gpointer         user_data);
 
 void
-on_reser_vol_clicked                   (GtkButton       *button,
+on_Enregistrer_clicked                 (GtkWidget      *objet,
+                                        gpointer         user_data);
+void
+on_Annuler_clicked                     (GtkWidget       *objet,
+                                        gpointer         user_data);
+
+
+int
+on_radiobutton1_toggled                (GtkToggleButton *togglebutton,
+                                        gpointer         user_data);
+
+int
+on_radiobutton2_toggled                (GtkToggleButton *togglebutton,
+                                        gpointer         user_data);
+
+int
+on_radiobutton3_toggled                (GtkToggleButton *togglebutton,
+                                        gpointer         user_data);
+
+
+void
+on_quitter_clicked                     (GtkWidget       *objet,
                                         gpointer         user_data);
 
 void
-on_reser_hebergement_clicked           (GtkButton       *button,
+on_retour_clicked                      (GtkWidget       *objet,
                                         gpointer         user_data);
 
 void
-on_mes_reclamation_clicked             (GtkButton       *button,
+on_Enregistrer2_clicked                (GtkWidget       *objet,
                                         gpointer         user_data);
 
 void
-on_mes_informations_clicked            (GtkButton       *button,
+on_selectionne_clicked                 (GtkWidget       *objet,
                                         gpointer         user_data);
 
 void
-on_messdevis_clicked                   (GtkWidget       *objet_graphique,
+on_modifier_clicked                    (GtkWidget       *objet,
                                         gpointer         user_data);
 
 void
-on_retour_mesdevis_clicked             (GtkWidget       *objet_graphique,
+on_client_clicked                      (GtkWidget       *objet,
                                         gpointer         user_data);
 
 void
-on_retour_mon_profile_clicked          (GtkWidget       *objet_graphique,
+on_admin_clicked                       (GtkWidget       *objet,
                                         gpointer         user_data);
 
 void
-on_gestion_devis_clicked               (GtkWidget       *objet_graphique,
+on_Reclamation_clicked                 (GtkWidget        *objet,
                                         gpointer         user_data);
 
 void
-on_gestion_service_clicked             (GtkButton       *button,
+on_ajouter6_clicked                    (GtkWidget        *objet,
                                         gpointer         user_data);
 
 void
-on_gestion_reclamation_clicked         (GtkButton       *button,
+on_afiicher6_clicked                   (GtkWidget        *objet,
                                         gpointer         user_data);
 
 void
-on_gestion_client_clicked              (GtkButton       *button,
+on_retour6_clicked                     (GtkWidget        *objet,
                                         gpointer         user_data);
 
 void
-on_gestion_employee_clicked            (GtkWidget       *objet_graphique,
+on_quitter5_clicked                    (GtkWidget       *objet,
                                         gpointer         user_data);
 
-void
-on_retour_p_hebergement_clicked        (GtkWidget       *objet_graphique,
+int
+on_oui_clicked                         (GtkWidget       *objet,
                                         gpointer         user_data);
 
-void
-on_retour_p_location_clicked           (GtkWidget       *objet_graphique,
-                                        gpointer         user_data);
-
-void
-on_payer_hebergement_clicked           (GtkWidget       *objet_graphique,
-                                        gpointer         user_data);
-
-void
-on_payer_location_clicked              (GtkWidget       *objet_graphique,
-                                        gpointer         user_data);
-
-void
-on_enregistrer_carte_hb_clicked        (GtkWidget       *objet_graphique,
-                                        gpointer         user_data);
-
-void
-on_enregistrer_carte_location_clicked  (GtkWidget       *objet_graphique,
-                                        gpointer         user_data);
-
-void
-on_payer_devis_hebergement_clicked     (GtkWidget       *objet_graphique,
-                                        gpointer         user_data);
-
-void
-on_s_d_v_clicked                       (GtkWidget       *objet_graphique,
-                                        gpointer         user_data);
-
-void
-on_s_d_h_clicked                       (GtkWidget       *objet_graphique,
-                                        gpointer         user_data);
-
-void
-on_s_d_l_clicked                       (GtkWidget       *objet_graphique,
-                                        gpointer         user_data);
-
-void
-on_supprimer_devis_location_clicked    (GtkWidget       *objet_graphique,
-                                        gpointer         user_data);
-
-void
-on_g_d_v_clicked                       (GtkWidget       *objet_graphique,
-                                        gpointer         user_data);
-
-void
-on_g_d_h_clicked                       (GtkWidget       *objet_graphique,
-                                        gpointer         user_data);
-
-void
-on_g_d_l_clicked                       (GtkWidget       *objet_graphique,
-                                        gpointer         user_data);
-
-void
-on_retour_g_d_clicked                  (GtkWidget       *objet_graphique,
-                                        gpointer         user_data);
-
-void
-on_retour_g_d_vol_clicked              (GtkWidget       *objet_graphique,
-                                        gpointer         user_data);
-
-void
-on_retour_g_d_h_clicked                (GtkButton       *button,
-                                        gpointer         user_data);
-
-void
-on_retour_g_d_l_clicked                (GtkButton       *button,
+int
+on_non_clicked                         (GtkWidget       *objet,
                                         gpointer         user_data);
