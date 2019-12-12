@@ -86,7 +86,7 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-bin_PROGRAMS = project8$(EXEEXT)
+bin_PROGRAMS = my-devis$(EXEEXT)
 subdir = src
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.in
@@ -99,11 +99,13 @@ CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
-am_project8_OBJECTS = main.$(OBJEXT) support.$(OBJEXT) \
-	interface.$(OBJEXT) callbacks.$(OBJEXT) voiture.$(OBJEXT)
-project8_OBJECTS = $(am_project8_OBJECTS)
+am_my_devis_OBJECTS = main.$(OBJEXT) support.$(OBJEXT) \
+	interface.$(OBJEXT) callbacks.$(OBJEXT) \
+	mes_devis_vol.$(OBJEXT) mes_devis_hebergement.$(OBJEXT) \
+	mes_devis_location.$(OBJEXT)
+my_devis_OBJECTS = $(am_my_devis_OBJECTS)
 am__DEPENDENCIES_1 =
-project8_DEPENDENCIES = $(am__DEPENDENCIES_1)
+my_devis_DEPENDENCIES = $(am__DEPENDENCIES_1)
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
 am__v_P_0 = false
@@ -132,8 +134,8 @@ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
 am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
-SOURCES = $(project8_SOURCES)
-DIST_SOURCES = $(project8_SOURCES)
+SOURCES = $(my_devis_SOURCES)
+DIST_SOURCES = $(my_devis_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -277,14 +279,16 @@ INCLUDES = \
 	-DPACKAGE_LOCALE_DIR=\""$(prefix)/$(DATADIRNAME)/locale"\" \
 	@PACKAGE_CFLAGS@
 
-project8_SOURCES = \
+my_devis_SOURCES = \
 	main.c \
 	support.c support.h \
 	interface.c interface.h \
 	callbacks.c callbacks.h \
-	voiture.c  voiture.h
+	mes_devis_vol.c mes_devis_vol.h \
+	mes_devis_hebergement.c mes_devis_hebergement.h \
+	mes_devis_location.c mes_devis_location.h
 
-project8_LDADD = @PACKAGE_LIBS@ $(INTLLIBS)
+my_devis_LDADD = @PACKAGE_LIBS@ $(INTLLIBS)
 all: all-am
 
 .SUFFIXES:
@@ -361,9 +365,9 @@ uninstall-binPROGRAMS:
 clean-binPROGRAMS:
 	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
 
-project8$(EXEEXT): $(project8_OBJECTS) $(project8_DEPENDENCIES) $(EXTRA_project8_DEPENDENCIES) 
-	@rm -f project8$(EXEEXT)
-	$(AM_V_CCLD)$(LINK) $(project8_OBJECTS) $(project8_LDADD) $(LIBS)
+my-devis$(EXEEXT): $(my_devis_OBJECTS) $(my_devis_DEPENDENCIES) $(EXTRA_my_devis_DEPENDENCIES) 
+	@rm -f my-devis$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(my_devis_OBJECTS) $(my_devis_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -374,8 +378,10 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/callbacks.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/interface.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/main.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mes_devis_hebergement.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mes_devis_location.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mes_devis_vol.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/support.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/voiture.Po@am__quote@
 
 .c.o:
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<

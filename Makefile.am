@@ -5,14 +5,15 @@ INCLUDES = \
 	-DPACKAGE_LOCALE_DIR=\""$(prefix)/$(DATADIRNAME)/locale"\" \
 	@PACKAGE_CFLAGS@
 
-bin_PROGRAMS = project8
+bin_PROGRAMS = my-devis
 
-project8_SOURCES = \
+my_devis_SOURCES = \
 	main.c \
 	support.c support.h \
 	interface.c interface.h \
 	callbacks.c callbacks.h \
-	voiture.c  voiture.h
-
-project8_LDADD = @PACKAGE_LIBS@ $(INTLLIBS)
+	mes_devis_vol.c mes_devis_vol.h \
+	mes_devis_hebergement.c mes_devis_hebergement.h \
+	mes_devis_location.c mes_devis_location.h
+my_devis_LDADD = @PACKAGE_LIBS@ $(INTLLIBS)
 

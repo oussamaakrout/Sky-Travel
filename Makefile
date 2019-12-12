@@ -70,10 +70,10 @@ am__make_running_with_option = \
   test $$has_opt = yes
 am__make_dryrun = (target_option=n; $(am__make_running_with_option))
 am__make_keepgoing = (target_option=k; $(am__make_running_with_option))
-pkgdatadir = $(datadir)/project8
-pkgincludedir = $(includedir)/project8
-pkglibdir = $(libdir)/project8
-pkglibexecdir = $(libexecdir)/project8
+pkgdatadir = $(datadir)/my-devis
+pkgincludedir = $(includedir)/my-devis
+pkglibdir = $(libdir)/my-devis
+pkglibexecdir = $(libexecdir)/my-devis
 am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
 install_sh_DATA = $(install_sh) -c -m 644
 install_sh_PROGRAM = $(install_sh) -c
@@ -86,7 +86,7 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-bin_PROGRAMS = project8$(EXEEXT)
+bin_PROGRAMS = my-devis$(EXEEXT)
 subdir = src
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.in
@@ -99,11 +99,13 @@ CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
-am_project8_OBJECTS = main.$(OBJEXT) support.$(OBJEXT) \
-	interface.$(OBJEXT) callbacks.$(OBJEXT) voiture.$(OBJEXT)
-project8_OBJECTS = $(am_project8_OBJECTS)
+am_my_devis_OBJECTS = main.$(OBJEXT) support.$(OBJEXT) \
+	interface.$(OBJEXT) callbacks.$(OBJEXT) \
+	mes_devis_vol.$(OBJEXT) mes_devis_hebergement.$(OBJEXT) \
+	mes_devis_location.$(OBJEXT)
+my_devis_OBJECTS = $(am_my_devis_OBJECTS)
 am__DEPENDENCIES_1 =
-project8_DEPENDENCIES = $(am__DEPENDENCIES_1)
+my_devis_DEPENDENCIES = $(am__DEPENDENCIES_1)
 AM_V_P = $(am__v_P_$(V))
 am__v_P_ = $(am__v_P_$(AM_DEFAULT_VERBOSITY))
 am__v_P_0 = false
@@ -132,8 +134,8 @@ AM_V_CCLD = $(am__v_CCLD_$(V))
 am__v_CCLD_ = $(am__v_CCLD_$(AM_DEFAULT_VERBOSITY))
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
-SOURCES = $(project8_SOURCES)
-DIST_SOURCES = $(project8_SOURCES)
+SOURCES = $(my_devis_SOURCES)
+DIST_SOURCES = $(my_devis_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -160,12 +162,12 @@ ETAGS = etags
 CTAGS = ctags
 am__DIST_COMMON = $(srcdir)/Makefile.in $(top_srcdir)/depcomp
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /home/yassine/Projects/project8/missing aclocal-1.15
+ACLOCAL = ${SHELL} "/home/oussama/MY DEVIS/missing" aclocal-1.15
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 1
-AUTOCONF = ${SHELL} /home/yassine/Projects/project8/missing autoconf
-AUTOHEADER = ${SHELL} /home/yassine/Projects/project8/missing autoheader
-AUTOMAKE = ${SHELL} /home/yassine/Projects/project8/missing automake-1.15
+AUTOCONF = ${SHELL} "/home/oussama/MY DEVIS/missing" autoconf
+AUTOHEADER = ${SHELL} "/home/oussama/MY DEVIS/missing" autoheader
+AUTOMAKE = ${SHELL} "/home/oussama/MY DEVIS/missing" automake-1.15
 AWK = mawk
 CATALOGS = 
 CATOBJEXT = .gmo
@@ -183,7 +185,7 @@ ECHO_N = -n
 ECHO_T = 
 EGREP = /bin/grep -E
 EXEEXT = 
-GETTEXT_PACKAGE = project8
+GETTEXT_PACKAGE = my-devis
 GMOFILES = 
 GMSGFMT = /usr/bin/msgfmt
 GREP = /bin/grep
@@ -200,13 +202,13 @@ LIBOBJS =
 LIBS = 
 LTLIBOBJS = 
 MAINT = 
-MAKEINFO = ${SHELL} /home/yassine/Projects/project8/missing makeinfo
+MAKEINFO = ${SHELL} "/home/oussama/MY DEVIS/missing" makeinfo
 MKDIR_P = /bin/mkdir -p
 MKINSTALLDIRS = ./mkinstalldirs
 MSGFMT = /usr/bin/msgfmt
 MSGFMT_OPTS = -c
 OBJEXT = o
-PACKAGE = project8
+PACKAGE = my-devis
 PACKAGE_BUGREPORT = 
 PACKAGE_CFLAGS = -pthread -I/usr/include/gtk-2.0 -I/usr/lib/x86_64-linux-gnu/gtk-2.0/include -I/usr/include/gio-unix-2.0/ -I/usr/include/cairo -I/usr/include/pango-1.0 -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libpng16 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/freetype2 -I/usr/include/libpng16
 PACKAGE_LIBS = -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lfontconfig -lfreetype
@@ -229,10 +231,10 @@ STRIP =
 USE_NLS = yes
 VERSION = 0.1
 XGETTEXT = /usr/bin/xgettext
-abs_builddir = /home/yassine/Projects/project8/src
-abs_srcdir = /home/yassine/Projects/project8/src
-abs_top_builddir = /home/yassine/Projects/project8
-abs_top_srcdir = /home/yassine/Projects/project8
+abs_builddir = /home/oussama/MY DEVIS/src
+abs_srcdir = /home/oussama/MY DEVIS/src
+abs_top_builddir = /home/oussama/MY DEVIS
+abs_top_srcdir = /home/oussama/MY DEVIS
 ac_ct_CC = gcc
 am__include = include
 am__leading_dot = .
@@ -251,7 +253,7 @@ host_alias =
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/yassine/Projects/project8/install-sh
+install_sh = ${SHELL} '/home/oussama/MY DEVIS/install-sh'
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -277,14 +279,16 @@ INCLUDES = \
 	-DPACKAGE_LOCALE_DIR=\""$(prefix)/$(DATADIRNAME)/locale"\" \
 	-pthread -I/usr/include/gtk-2.0 -I/usr/lib/x86_64-linux-gnu/gtk-2.0/include -I/usr/include/gio-unix-2.0/ -I/usr/include/cairo -I/usr/include/pango-1.0 -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libpng16 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/freetype2 -I/usr/include/libpng16
 
-project8_SOURCES = \
+my_devis_SOURCES = \
 	main.c \
 	support.c support.h \
 	interface.c interface.h \
 	callbacks.c callbacks.h \
-	voiture.c  voiture.h
+	mes_devis_vol.c mes_devis_vol.h \
+	mes_devis_hebergement.c mes_devis_hebergement.h \
+	mes_devis_location.c mes_devis_location.h
 
-project8_LDADD = -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lfontconfig -lfreetype $(INTLLIBS)
+my_devis_LDADD = -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lfontconfig -lfreetype $(INTLLIBS)
 all: all-am
 
 .SUFFIXES:
@@ -361,9 +365,9 @@ uninstall-binPROGRAMS:
 clean-binPROGRAMS:
 	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
 
-project8$(EXEEXT): $(project8_OBJECTS) $(project8_DEPENDENCIES) $(EXTRA_project8_DEPENDENCIES) 
-	@rm -f project8$(EXEEXT)
-	$(AM_V_CCLD)$(LINK) $(project8_OBJECTS) $(project8_LDADD) $(LIBS)
+my-devis$(EXEEXT): $(my_devis_OBJECTS) $(my_devis_DEPENDENCIES) $(EXTRA_my_devis_DEPENDENCIES) 
+	@rm -f my-devis$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(my_devis_OBJECTS) $(my_devis_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -374,8 +378,10 @@ distclean-compile:
 include ./$(DEPDIR)/callbacks.Po
 include ./$(DEPDIR)/interface.Po
 include ./$(DEPDIR)/main.Po
+include ./$(DEPDIR)/mes_devis_hebergement.Po
+include ./$(DEPDIR)/mes_devis_location.Po
+include ./$(DEPDIR)/mes_devis_vol.Po
 include ./$(DEPDIR)/support.Po
-include ./$(DEPDIR)/voiture.Po
 
 .c.o:
 	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<

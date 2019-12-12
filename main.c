@@ -15,8 +15,12 @@
 int
 main (int argc, char *argv[])
 {
-  GtkWidget *window_gestion_voiture;
-
+  GtkWidget *acceuil_client;
+  GtkWidget *mes_devis_vol;
+  GtkWidget *mes_devis_hebergement;
+  GtkWidget *mes_devis_location;
+  GtkWidget *acceuil_admin;
+  GtkWidget *acceuil_employee;
 #ifdef ENABLE_NLS
   bindtextdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR);
   bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
@@ -33,8 +37,10 @@ main (int argc, char *argv[])
    * (except popup menus), just so that you see something after building
    * the project. Delete any components that you don't want shown initially.
    */
-  window_gestion_voiture = create_window_gestion_voiture();
-  gtk_widget_show (window_gestion_voiture);
+  acceuil_client = create_acceuil_client (); 
+gtk_widget_show (acceuil_client);
+acceuil_admin = create_acceuil_admin (); 
+gtk_widget_show (acceuil_admin);
 
   gtk_main ();
   return 0;
